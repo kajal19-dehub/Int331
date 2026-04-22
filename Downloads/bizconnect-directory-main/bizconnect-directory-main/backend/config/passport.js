@@ -10,6 +10,7 @@ console.log('=======================================\n');
 
 // Google Strategy
 console.log("ENV CALLBACK:", process.env.GOOGLE_CALLBACK_URL);
+console.log("GOOGLE CLIENT ID VALUE:", process.env.GOOGLE_CLIENT_ID);
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
