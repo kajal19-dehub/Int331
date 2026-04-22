@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
 });
 
 // API Routes
-app.use('/api/auth', require('./routes/auth'));
+
 app.use('/api/businesses', require('./routes/business'));
 app.use('/api/reviews', require('./routes/review'));
 app.use('/api/users', require('./routes/user'));

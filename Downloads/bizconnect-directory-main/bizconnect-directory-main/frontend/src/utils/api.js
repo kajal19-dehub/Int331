@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Update with your backend URL
+  baseURL: process.env.REACT_APP_API_URL, // Update with your backend URL
   timeout: 10000,
 });
 
