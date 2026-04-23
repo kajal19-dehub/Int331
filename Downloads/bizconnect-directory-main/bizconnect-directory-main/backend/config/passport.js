@@ -8,9 +8,8 @@ console.log('Google Client ID exists:', !!process.env.GOOGLE_CLIENT_ID);
 console.log('Google Client Secret exists:', !!process.env.GOOGLE_CLIENT_SECRET);
 console.log('=======================================\n');
 
-// Google Strategy
-console.log("ENV CALLBACK:", process.env.GOOGLE_CALLBACK_URL);
-console.log("GOOGLE CLIENT ID VALUE:", process.env.GOOGLE_CLIENT_ID);
+console.log("LIVE CALLBACK URL:", "https://bizconnect-directory-4.onrender.com/api/auth/google/callback");
+console.log("ENV GOOGLE_CALLBACK_URL:", process.env.GOOGLE_CALLBACK_URL);
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
