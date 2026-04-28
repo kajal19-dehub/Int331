@@ -1,0 +1,71 @@
+<div class="p-8 bg-gray-100 min-h-screen">
+
+<h1 class="text-3xl font-bold text-green-600 mb-6">
+Volunteer Applications
+</h1>
+
+<table class="w-full bg-white shadow rounded-lg">
+
+<thead class="bg-green-600 text-white">
+
+<tr>
+
+<th class="p-3 text-left">Volunteer</th>
+<th class="p-3 text-left">Opportunity</th>
+<th class="p-3 text-left">Location</th>
+<th class="p-3 text-left">Status</th>
+<th class="p-3 text-left">Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr *ngFor="let app of applications" class="border-b">
+
+<td class="p-3">
+{{ app.volunteer_id?.name }}
+</td>
+
+<td class="p-3">
+{{ app.opportunity_id?.title }}
+</td>
+
+<td class="p-3">
+{{ app.opportunity_id?.location }}
+</td>
+
+<td class="p-3">
+<span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded">
+{{ app.status }}
+</span>
+</td>
+
+<td class="p-3 space-x-2">
+
+<button
+(click)="updateStatus(app._id,'accepted')"
+class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">
+
+Accept
+
+</button>
+
+<button
+(click)="updateStatus(app._id,'rejected')"
+class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">
+
+Reject
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>

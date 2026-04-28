@@ -1,0 +1,95 @@
+<div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-green-100 via-white to-green-200 px-4">
+
+  <div class="bg-white shadow-2xl rounded-3xl p-10 w-full max-w-md transition-all duration-300">
+
+    <h2 class="text-3xl font-bold text-center text-green-600 mb-2">
+      🌱 Create Account
+    </h2>
+
+    <p class="text-center text-gray-500 mb-8 text-sm">
+      Join WasteZero & Start Recycling Smartly
+    </p>
+
+    <form [formGroup]="registerForm"
+          (ngSubmit)="onSubmit()"
+          class="space-y-5">
+
+      <!-- Name -->
+      <div>
+        <input type="text"
+               formControlName="name"
+               placeholder="Full Name"
+               class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none">
+      </div>
+
+      <!-- Email -->
+      <div>
+        <input type="email"
+               formControlName="email"
+               placeholder="Email"
+               class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none">
+      </div>
+
+      <!-- Password -->
+      <div>
+        <input type="password"
+               formControlName="password"
+               placeholder="Password (min 6 characters)"
+               class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none">
+      </div>
+
+      <!-- Confirm Password -->
+      <div>
+        <input type="password"
+               formControlName="confirmPassword"
+               placeholder="Confirm Password"
+               class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none">
+      </div>
+
+      <!-- Role -->
+      <div>
+        <select formControlName="role"
+                class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none">
+          <option value="">Select Role</option>
+          <option value="user">User (Citizen)</option>
+          <option value="volunteer">Volunteer (Pickup Agent)</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <!-- Location -->
+      <div>
+        <input type="text"
+               formControlName="location"
+               placeholder="Location"
+               class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none">
+      </div>
+
+      <!-- Error -->
+      <div *ngIf="errorMessage"
+           class="bg-red-100 text-red-600 text-sm p-3 rounded-lg text-center">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Button -->
+      <button type="submit"
+              [disabled]="isLoading"
+              class="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition shadow-md disabled:opacity-60">
+
+        {{ isLoading ? 'Creating Account...' : 'Register' }}
+
+      </button>
+
+    </form>
+
+    <p class="text-center text-sm text-gray-500 mt-6">
+      Already have an account?
+      <a routerLink="/login"
+         class="text-green-600 font-semibold hover:underline">
+        Login
+      </a>
+    </p>
+
+  </div>
+
+</div>

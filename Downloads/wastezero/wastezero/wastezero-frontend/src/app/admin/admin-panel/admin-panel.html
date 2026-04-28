@@ -1,0 +1,127 @@
+<div class="p-8 bg-gray-100 min-h-screen">
+
+<h1 class="text-3xl font-bold text-green-600 mb-8">
+Admin Panel
+</h1>
+
+<!-- Create / Edit Opportunity -->
+
+<div class="bg-white rounded-xl shadow p-6 max-w-2xl">
+
+<h2 class="text-xl font-semibold mb-4">
+{{ editingId ? 'Edit Opportunity' : 'Create Opportunity' }}
+</h2>
+
+<div class="mb-4">
+<label class="block text-sm text-gray-600 mb-1">Title</label>
+<input [(ngModel)]="title"
+class="w-full border rounded-lg px-4 py-2">
+</div>
+
+<div class="mb-4">
+<label class="block text-sm text-gray-600 mb-1">Description</label>
+<textarea [(ngModel)]="description"
+rows="3"
+class="w-full border rounded-lg px-4 py-2">
+</textarea>
+</div>
+
+<div class="mb-4">
+<label class="block text-sm text-gray-600 mb-1">Skills</label>
+<input [(ngModel)]="skills"
+placeholder="teamwork,communication"
+class="w-full border rounded-lg px-4 py-2">
+</div>
+
+<div class="mb-4">
+<label class="block text-sm text-gray-600 mb-1">Duration</label>
+<input [(ngModel)]="duration"
+class="w-full border rounded-lg px-4 py-2">
+</div>
+
+<div class="mb-6">
+<label class="block text-sm text-gray-600 mb-1">Location</label>
+<input [(ngModel)]="location"
+class="w-full border rounded-lg px-4 py-2">
+</div>
+
+<button
+(click)="createOpportunity()"
+class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
+
+{{ editingId ? 'Update Opportunity' : 'Create Opportunity' }}
+
+</button>
+
+</div>
+
+<div class="mb-6">
+
+  <button
+    routerLink="/admin/applications"
+    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+
+    View Applications
+
+  </button>
+
+</div>
+
+
+
+<!-- Opportunities List -->
+
+<h2 class="text-xl font-semibold mt-10 mb-4">
+Existing Opportunities
+</h2>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div *ngFor="let opp of opportunities"
+class="bg-white shadow rounded-xl p-6">
+
+<h3 class="text-lg font-bold">
+{{opp.title}}
+</h3>
+
+<p class="text-gray-600 mt-2">
+{{opp.description}}
+</p>
+
+<p class="text-sm text-gray-500 mt-2">
+Location: {{opp.location}}
+</p>
+
+<p class="text-sm text-gray-500">
+Duration: {{opp.duration}}
+</p>
+
+<p class="text-sm text-gray-500">
+Skills: {{opp.requiredSkills}}
+</p>
+
+<div class="flex gap-3 mt-4">
+
+<button
+(click)="editOpportunity(opp)"
+class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+
+Edit
+
+</button>
+
+<button
+(click)="deleteOpportunity(opp._id)"
+class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>

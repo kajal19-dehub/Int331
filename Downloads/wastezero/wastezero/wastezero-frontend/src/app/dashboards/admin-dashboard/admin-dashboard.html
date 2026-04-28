@@ -1,0 +1,33 @@
+<div class="p-8 bg-gray-100 min-h-screen">
+
+  <h1 class="text-3xl font-bold text-green-600 mb-8">
+    Admin Dashboard
+  </h1>
+
+  <!-- Stats Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div class="bg-white p-6 rounded-xl shadow">
+      <p class="text-gray-500 text-sm">Total Opportunities</p>
+      <h2 class="text-3xl font-bold text-green-600 mt-2">
+        {{ totalOpportunities }}
+      </h2>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow">
+      <p class="text-gray-500 text-sm">Total Volunteers</p>
+      <h2 class="text-3xl font-bold text-green-600 mt-2">
+        {{ totalVolunteers }}
+      </h2>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow">
+      <p class="text-gray-500 text-sm">Total Applications</p>
+      <h2 class="text-3xl font-bold text-green-600 mt-2">
+        {{ totalApplications }}
+      </h2>
+    </div>
+
+  </div>
+
+</div>
